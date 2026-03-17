@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>面积法证明勾股定理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e8e8ec;
+    }
+    .container {
+      max-width: 576px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 1024" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <style>
+          .bg { fill: #f8f8fb; }
+          .guide { stroke: #445b85; stroke-width: 1.2; stroke-dasharray: 2.6 4.2; opacity: 0.5; }
+          .frame { fill: none; stroke: #6e4f3e; stroke-width: 1.7; }
+          .edge { fill: none; stroke: #202020; stroke-width: 1.8; }
+          .title-box { fill: #0a0a0d; }
+          .title { font: 700 28px "PingFang SC","Microsoft YaHei",sans-serif; fill: #7ef0d8; }
+          .math { font: italic 34px Georgia,"Times New Roman",serif; fill: #151515; }
+          .formula { font: italic 42px Georgia,"Times New Roman",serif; fill: #151515; }
+          .mark { font: italic 28px Georgia,"Times New Roman",serif; fill: #151515; }
+          .pink { fill: #f57db0; fill-opacity: 0.96; stroke: #d56696; stroke-width: 1.4; }
+          .blue { fill: #62b0e8; fill-opacity: 0.96; stroke: #4b92cf; stroke-width: 1.4; }
+          .step { font: 500 14px "PingFang SC","Microsoft YaHei",sans-serif; fill: #4f5f79; }
+        </style>
+      </defs>
+
+      <rect class="bg" x="0" y="0" width="576" height="1024"/>
+
+      <g transform="translate(48 0)">
+      <g class="guide">
+        <line x1="24" y1="294" x2="420" y2="752"/>
+        <line x1="254" y1="156" x2="254" y2="760"/>
+        <line x1="14" y1="537" x2="458" y2="153"/>
+        <line x1="24" y1="264" x2="453" y2="760"/>
+        <line x1="24" y1="719" x2="456" y2="356"/>
+      </g>
+
+      <rect class="title-box" x="52" y="88" width="364" height="68" rx="14" ry="14"/>
+      <text class="title" x="234" y="136" text-anchor="middle">&#x9762;&#x79EF;&#x6CD5;&#x8BC1;&#x660E;&#x52FE;&#x80A1;&#x5B9A;&#x7406;</text>
+
+      <g>
+        <polygon class="frame" points="140,428 251,332 155,221 44,317"/>
+        <polygon class="frame" points="251,332 347,249 430,345 334,428"/>
+        <rect class="frame" x="140" y="428" width="194" height="194"/>
+      </g>
+
+      <g>
+        <line class="edge" x1="140" y1="428" x2="251" y2="332"/>
+        <line class="edge" x1="251" y1="332" x2="334" y2="428"/>
+        <line class="edge" x1="140" y1="428" x2="334" y2="428"/>
+      </g>
+
+      <polygon class="pink"
+        points="44,317 140,428 251,332 155,221">
+        <animate
+          attributeName="points"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.0833;0.2083;1"
+          values="
+          44,317 140,428 251,332 155,221;
+          44,317 140,428 251,332 155,221;
+          140,428 236,539 347,443 251,332;
+          140,428 236,539 347,443 251,332"/>
+        <animate
+          attributeName="opacity"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.2082;0.2083;1"
+          values="1;1;0;0"/>
+      </polygon>
+
+      <polygon class="pink"
+        points="236,539 140,428 251,332 347,443"
+        opacity="0">
+        <animate
+          attributeName="points"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.2083;0.3333;0.4583;1"
+          values="
+          236,539 140,428 251,332 347,443;
+          236,539 140,428 251,332 347,443;
+          140,622 140,428 251,332 251,526;
+          140,622 140,428 251,428 251,622;
+          140,622 140,428 251,428 251,622"/>
+        <animate
+          attributeName="opacity"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.2082;0.2083;1"
+          values="0;0;1;1"/>
+      </polygon>
+
+      <polygon class="blue"
+        points="347,249 251,332 334,428 430,345">
+        <animate
+          attributeName="points"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.5000;0.6250;1"
+          values="
+          347,249 251,332 334,428 430,345;
+          347,249 251,332 334,428 430,345;
+          251,332 155,415 238,511 334,428;
+          251,332 155,415 238,511 334,428"/>
+        <animate
+          attributeName="opacity"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.6249;0.6250;1"
+          values="1;1;0;0"/>
+      </polygon>
+
+      <polygon class="blue"
+        points="155,415 251,332 334,428 238,511"
+        opacity="0">
+        <animate
+          attributeName="points"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.6250;0.7500;0.8750;1"
+          values="
+          155,415 251,332 334,428 238,511;
+          155,415 251,332 334,428 238,511;
+          251,526 251,332 334,428 334,622;
+          251,622 251,428 334,428 334,622;
+          251,622 251,428 334,428 334,622"/>
+        <animate
+          attributeName="opacity"
+          dur="8s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          keyTimes="0;0.6249;0.6250;1"
+          values="0;0;1;1"/>
+      </polygon>
+
+      <text class="mark" x="206" y="400">a</text>
+      <text class="mark" x="303" y="400">b</text>
+      <text class="math" x="226" y="462">c</text>
+
+      <text class="formula" x="240" y="718" text-anchor="middle">a<tspan baseline-shift="super" font-size="26">2</tspan> + b<tspan baseline-shift="super" font-size="26">2</tspan> = c<tspan baseline-shift="super" font-size="26">2</tspan></text>
+
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
